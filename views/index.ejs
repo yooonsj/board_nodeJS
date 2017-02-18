@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="board">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/flat-ui/dist/css/flat-ui.min.css" />
+        <link rel="stylesheet" href="/css/common.css" />
+
+        <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/angular/angular.min.js"></script>
+        <script type="text/javascript" src="/angular-bootstrap/ui-bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+            var app = angular.module('board', ['ui.bootstrap']);
+        </script>
+
+        <title>2016 신림 스터디</title>
+    </head>
+    <body>
+        <% include ./menu %>
+        <div class="main-wrap">
+            <div class="intro-wrap content-wrap">
+                <h1><p>2016 ~ 2017</p>MEAN Stack Study</h1>
+                <p>MariaDB + Express + AngularJS + NodeJS</p>
+            </div>
+            <div class="skill-wrap content-wrap">
+                <p>Encoding : UTF-8 </p>
+                <p>
+                    <span class="btn btn-default">MariaDB v10.0.24</span>
+                    <span class="btn btn-primary">Express v4.14.1</span>
+                    <span class="btn btn-success">AngularJS</span>
+                </p>
+            </div>
+        </div>
+        <div id="footer" class="panel-footer" style="text-align: center;margin-top: 20px;">
+        	<p>Copyright (C) 2017 by Study Group, All right reserved.</p>
+        </div>
+    </body>
+</html>

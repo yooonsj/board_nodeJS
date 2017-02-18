@@ -1,0 +1,4 @@
+libs/
+.git/
+node_modules/
+logs/

@@ -1,0 +1,27 @@
+{
+  "name": "board",
+  "description": "nodejs study",
+  "main": "index.js",
+  "authors": [
+    "yooonsj"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "nodejs"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "flat-ui": "^2.3.0",
+    "angular": "^1.6.2",
+    "angular-bootstrap": "^2.5.0"
+  }
+}

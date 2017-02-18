@@ -1,0 +1,40 @@
+{
+  "name": "board",
+  "version": "1.0.0",
+  "description": "nodejs study",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yooonsj/board_nodeJS.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "yooonsj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yooonsj/board_nodeJS/issues"
+  },
+  "homepage": "https://github.com/yooonsj/board_nodeJS#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.16.1",
+    "connect-flash": "^0.1.1",
+    "date-utils": "^1.2.21",
+    "ejs": "2.5.5",
+    "express": "4.14.1",
+    "express-session": "^1.15.1",
+    "handlebars": "^4.0.6",
+    "moment": "^2.17.1",
+    "mysql": "2.13.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

@@ -1,0 +1,123 @@
+<nav class="navbar navbar-inverse navbar-embossed" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+            <span class="sr-only">Toggle navigation</span>
+        </button>
+        <a class="navbar-brand" href="/">MEAN Stack Study</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-01">
+        <ul class="nav navbar-nav navbar-right">
+        <% if (!session.passport) { %>
+            <li><a href="#" data-toggle="modal" data-target="#LOGIN_MODAL">Login</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#JOIN_MODAL">Join</a></li>
+        <% } else { %>
+            <li>
+                <p class="navbar-text">안녕하세요! <%= session.passport.user.name %>님</p>
+            </li>
+            <li><a href="/logout">Logout</a></li>
+            <% } %>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>
+
+<!-- Login Modal -->
+<div class="modal fade" id="LOGIN_MODAL" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document" ng-controller="login">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Login</h4>
+            </div>
+            <form id="LOGIN_form" ng-submit="login()">
+                <div class="modal-body login-form">
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control login-field" value="" placeholder="Enter your email" id="LOGIN_form_email" ng-model="user.email">
+                        <label class="login-field-icon fui-mail" for="LOGIN_form_email"></label>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control login-field" value="" placeholder="Password" id="LOGIN_form_password" ng-model="user.password">
+                        <label class="login-field-icon fui-lock" for="LOGIN_form_password"></label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Close"/>
+                    <input type="submit" class="btn btn-primary" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        app.controller('login', function($scope, $http) {
+            $scope.user = {};
+            $scope.login = function() {
+                $http({
+                    url: '/login',
+                    method: 'POST',
+                    data: $scope.user,
+                }).then(function(res) {
+                    if (res.data) {
+                        alert(res.data);
+                    } else {
+                        location.reload();
+                    }
+                });
+            }
+
+        });
+    </script>
+</div>
+
+<!-- Join Modal -->
+<div class="modal fade" id="JOIN_MODAL" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document" ng-controller="join">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Join</h4>
+            </div>
+            <form id="JOIN_form" ng-submit="join()">
+                <div class="modal-body login-form">
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control login-field" value="" placeholder="Enter your email" id="JOIN_form_email" ng-model="user.email">
+                        <label class="login-field-icon fui-mail" for="JOIN_form_email"></label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control login-field" value="" placeholder="Enter your name" id="JOIN_form_name" ng-model="user.name">
+                        <label class="login-field-icon fui-user" for="JOIN_form_name"></label>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control login-field" value="" placeholder="Password" id="LOGIN_form_password" ng-model="user.password">
+                        <label class="login-field-icon fui-lock" for="LOGIN_form_password"></label>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="repassword" class="form-control login-field" value="" placeholder="Re Password" id="LOGIN_form_repassword" ng-model="user.repassword">
+                        <label class="login-field-icon fui-lock" for="LOGIN_form_repassword"></label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Close"/>
+                    <input type="submit" class="btn btn-primary" value="OK"/>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        app.controller('join', function($scope, $http) {
+            $scope.user = {};
+            $scope.join = function() {
+                $http({
+                    url: '/join',
+                    method: 'POST',
+                    data: $scope.user,
+                }).then(function(res) {
+                    if (res.data) {
+                        alert(res.data);
+                    } else {
+                        $('#JOIN_MODAL').modal('hide');
+                    }
+                });
+            }
+
+        });
+    </script>
+</div>

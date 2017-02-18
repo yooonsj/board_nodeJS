@@ -1,0 +1,46 @@
+.navbar {
+    border-radius: 0;
+    margin: 0;
+}
+
+.content-wrap {
+    padding: 50px 100px;
+}
+.content-wrap > h1 {
+    text-decoration: underline;
+    margin-bottom: 50px;
+}
+
+.login-wrap {
+    background-color: #1abc9c;
+    height: 100vh
+}
+.login-wrap h1 {
+    text-align: center;
+    padding: 100px 0 70px 0;
+    font-size: 70px;
+    margin: 0;
+}
+.login-wrap .login-form {
+    background-color: #edeff1;
+    padding: 24px 23px 20px;
+    position: relative;
+    width: 30%;
+    margin: auto
+}
+
+.main-wrap {
+    height: 100vh
+}
+.main-wrap .skill-wrap {
+    background-color: #F1C40F;
+}
+.main-wrap .content-wrap > h1 {
+    text-decoration: none;
+}
+
+.board-wrap .board-contents {
+    margin-bottom: 50px;
+    min-height: 500px;
+    max-height: 1000px;
+}
